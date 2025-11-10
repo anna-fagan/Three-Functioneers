@@ -5,9 +5,30 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="author" content="Anna Fagan, Catherine Hawley, Kelly Daniel">
-        <title>Better Buy Nothing Website</title>
+        <title>Buyer's Market</title>
     </head>
     <body>
-        <h1>Buying Board</h1>
+        <main>
+            <h1>Buyer's Market Posting Board</h1>
+            <p>Please enter city to display posts from that city.</p>
+            <form>
+                <label for="cityName">City</label><br>
+                <input type="text" id="cityName" name="cityName" required><br>
+                <input type="button" onclick="getCity()" value="submit">
+            </form>
+        </main>
+        <script>
+            // Create a function for the button
+            function getCity(){
+                // get the field where the user inputed the city name
+                const cityNameField= document.getElementById('cityName');
+
+                // Assign the value of the field to a variable
+                const cityName = cityNameField.value;
+
+                // ensure that the city is case sensitive
+                return cityName.toLowerCase();
+            }
+        </script>
     </body>
 </html>
