@@ -8,36 +8,12 @@
         <title>Buyer's Market</title>
     </head>
     <body>
-<<<<<<< HEAD
         <header>
             <h1>Buyer's Market</h1>
+            <button onclick="location.href='../index.html'">Home</button>
             <button onclick="location.href='../html/form.html'">Make a Post</button>
             <button onclick="location.href='../html/board.html'">View Current Posts</button>
             <button onclick="location.href='../html/notifications_form.html'">Get Notified</button>
         </header>
-=======
-        <main>
-            <h1>Buyer's Market Posting Board</h1>
-            <p>Please enter city to display posts from that city.</p>
-            <form>
-                <label for="cityName">City</label><br>
-                <input type="text" id="cityName" name="cityName" required><br>
-                <input type="button" onclick="getCity()" value="submit">
-            </form>
-        </main>
-        <script>
-            // Create a function for the button
-            function getCity(){
-                // get the field where the user inputed the city name
-                const cityNameField= document.getElementById('cityName');
-
-                // Assign the value of the field to a variable
-                const cityName = cityNameField.value;
-
-                // ensure that the city is case sensitive
-                return cityName.toLowerCase();
-            }
-        </script>
->>>>>>> fbb7c228a348293ac667147dac0df4bdbf958229
     </body>
 </html>
