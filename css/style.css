@@ -143,12 +143,25 @@ input[type="checkbox"] {
 
 /* Global styling */
 .board-container input[type="text"] {
-  max-width: 300px;
+  max-width: 90%;
 }
 
 /* Placeholder for where posts will go later */
 .board-grid {
   margin-top: 2rem;
+}
+.listing-image-container{
+  width:40%;
+}
+.listing-block{
+  display:block;
+}
+
+.listing-categories{
+  display:inline-block;
+  width:1fr;
+  padding:5px;
+  margin:15px;
 }
 
 /* Card styling */
@@ -158,10 +171,11 @@ input[type="checkbox"] {
   border-radius: 6px;
   padding: 1rem;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 /* Title spacing inside cards (for later when JS adds posts) */
-.post-card h3 {
+.post-card h2 {
   margin-top: 0;
 }
 
@@ -169,4 +183,12 @@ input[type="checkbox"] {
 .post-card-contact {
   font-size: 0.9rem;
   color: #555;
+}
+
+.home-decor{
+  display:none;
+}
+
+.office-supplies{
+  display:none;
 }

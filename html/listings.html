@@ -15,8 +15,6 @@
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../css/style.css" />
 
-    <!-- PAGE-SPECIFIC CSS -->
-    <link rel="stylesheet" href="../css/board.css" />
   </head>
   <body>
     <header>
@@ -26,14 +24,128 @@
     <nav>
       <a href="../index.html">Home</a>
       <a href="../html/post_form.html">Create a Post</a>
-      <a href="board.html">Post Board</a>
-      <a href="notifications_form">Get Notifications</a>
-      <a href="about.html">About Us</a>
+      <a href="../html/listings.html">Post Board</a>
+      <a href="../html/notify-form.html">Get Notifications</a>
+      <a href="../html/about.html">About Us</a>
     </nav>
 
     <main class="container board-container">
-      
+      <div>
+          <p>
+              Please select the categories you want to view from the checklist below and then click submit categories
+              to load the categories requested.
+          </p>
+      </div>
+      <div class="listing-block">
+        <div class="listing-categories">
+            <label for="homeDecorCheck">Home Decor</label>
+            <input type="checkbox" id="homeDecorCheck" name="home-decor">
+        </div>
+        <div class="listing-categories">
+          <label for="officeSuppliesCheck">Office Supplies</label>
+          <input type="checkbox" id="officeSuppliesCheck" name="office-supplies">
+        </div>
+      </div>
+      <button id="submitButton" onclick="showPost()">Submit Categories</button>
+      <!-- Start Home decor post section -->
+      <div class="home-decor">
+        <div class="post-card">
+          <h2>1970's Style Plug-in Wall Lamp</h2>
+          <p><b>Seller's Name:</b> Joanne Bristol</p>
+          <p><b>City:</b> Bellevue</p>
+          <p><b>Seller's Email:</b> wall_lamp@bellevuecollege.edu</p>
+          <p><b>Category:</b> Home Decor</p>
+          <img src="../images/plug-in-wall-lamp.jpg" alt="A 1970's plug in wall lamp, brown handle, no lamp shade." class="listing-image-container">
+          <p>
+              Works great, no lamp shade. Old-style 2-prong plug. Main body is 30 inches long. With 
+              attached rigid cord cover, entire assembly is about 60 inches.
+          </p>
+        </div>
+      </div>
+      <div class="home-decor">
+        <div class="post-card">
+          <h2>Artificial Olive Tree</h2>
+          <p><b>Seller's Name:</b> Jannet Kesler</p>
+          <p><b>City:</b> Bellevue</p>
+          <p><b>Seller's Email:</b> j.kesler@bellevuecollege.edu</p>
+          <p><b>Category:</b> Home Decor</p>
+          <img src="../images/artificial-olive-tree.jpg" alt="Artificial olive tree with realistic leaves" class="listing-image-container">
+          <p>
+              About 6ft tall, pot included. The tree has realistic leaves but is indeed fake. Will need the ability to transport the pot 
+              as one piece uppon pickup. Only available between 5 pm to 10 pm on weekdays.
+          </p>
+        </div>
+      </div>
+      <div class="home-decor">
+        <div class="post-card">
+          <h2>Decorative Pillows</h2>
+          <p><b>Seller's Name:</b> James Bond</p>
+          <p><b>City:</b> Bellevue</p>
+          <p><b>Seller's Email:</b> bondJamesBond@bellevuecollege.edu</p>
+          <p><b>Category:</b> Home Decor</p>
+          <img src="../images/decorative-pillows.jpg" alt="A set of three decorative pillows" class="listing-image-container">
+          <p>
+            Three pillows, beige. Good condition. Must be able to pick up at a public location and not ask too many
+            questions about me. Pickup times vary by day, please email me to set up a meeting. No payment required, just
+            want to get these off my hands as quick as possible.
+          </p>
+        </div>
+      </div>
+      <!-- End Home decor Section -->
+      <!-- Start Office supplies Section -->
+      <div class="office-supplies">
+        <div class="post-card">
+          <h2>Assorted Notepads</h2>
+          <p><b>Seller's Name:</b> Susan B Anthony</p>
+          <p><b>City:</b> Bellevue</p>
+          <p><b>Seller's Email:</b> bewareTheBee@bellevuecollege.edu</p>
+          <p><b>Category:</b> Office Supplies</p>
+          <img src="../images/assorted-notepads.jpg" alt="Two notepads stacked on top of each other" class="listing-image-container">
+          <p>
+            Two random notepads. The first is 4.5 by 5 inches, not sticky, and has the WSU logo on the pad. The second
+            pad is sticky notes, aproximately 3 inches by 3 inches and contains some characters around the edges. Sticks well.
+            No payment needed, pickup between 11 and 11:30 am on Tuesdays only.
+          </p>
+        </div>
+      </div>
     </main>
+    <script>
+      // create a function for the submit button that will show the posts
+      function showPost(){
+          // Get checkboxes
+          const homeDecor = document.getElementById('homeDecorCheck');
+          const officeSupplies = document.getElementById('officeSuppliesCheck')
+
+          // Get const for the div boxes used
+          const homeDecorDiv = document.querySelectorAll('.home-decor');
+          const officeSuppliesDiv = document.querySelectorAll('.office-supplies');
+
+          // get the button that runs the code to display hidden boxes
+          const checkComittButton = document.getElementById('submitButton');
+
+          // set up an if loop for the first check box
+          if (homeDecor.checked === true){
+              homeDecorDiv.forEach(element => {
+                  element.style.display = 'block';
+              });
+          } else{
+              homeDecorDiv.forEach(element => {
+                  element.style.display = 'none';
+              });
+          }
+
+          // Set up loop for the office supplies
+          if (officeSupplies.checked === true){
+              officeSuppliesDiv.forEach(element =>{
+                  element.style.display = 'block';
+              })
+          }else{
+              officeSuppliesDiv.forEach(element =>{
+                  element.style.display = 'none';
+              })
+          }
+      }
+    </script>
 
     <!-- ==== GLOBAL FOOTER ==== -->
     <footer>
