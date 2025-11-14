@@ -1,0 +1,172 @@
+/* =========================================
+   Buyer’s Market — GLOBAL STYLE SHEET
+   Author: Kelly Daniel
+   Purpose: Shared styles for the Four Functioneers project
+   ========================================= */
+
+/* === GLOBAL Styles-base reference === */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* === HEADERS & FOOTERS === */
+
+header,
+footer {
+  background-color: #334155;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+
+/* === NAVIGATION === */
+
+nav {
+  background-color: #475569;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+/* === BUTTONS === */
+/* Use .btn so button styling doesn’t override <input type=submit> if used later */
+
+button,
+.btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #1e40af;
+}
+
+/* === LAYOUT HELPERS === */
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Utility class for future JS-driven visibility? Will we use? */
+.hidden {
+  display: none !important;
+}
+
+.center {
+  text-align: center;
+}
+
+/* === Shared Element Styles for FORMS === */
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.55rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.4rem;
+}
+
+/* Error styles */
+.error-message {
+  color: #b91c1c;
+  font-weight: bold;
+  margin-top: -0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ============================
+   Board Page Styles 
+   ============================ */
+
+/* Space around main content */
+.board-container {
+  padding: 1rem 0;
+}
+
+/* Form spacing */
+.board-container form {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Global styling */
+.board-container input[type="text"] {
+  max-width: 300px;
+}
+
+/* Placeholder for where posts will go later */
+.board-grid {
+  margin-top: 2rem;
+}
+
+/* Card styling */
+.post-card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Title spacing inside cards (for later when JS adds posts) */
+.post-card h3 {
+  margin-top: 0;
+}
+
+/* Contact text (future use) */
+.post-card-contact {
+  font-size: 0.9rem;
+  color: #555;
+}
