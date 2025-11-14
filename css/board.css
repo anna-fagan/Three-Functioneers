@@ -1,0 +1,44 @@
+/* ============================
+   Board Page Styles 
+   ============================ */
+
+/* Space around main content */
+.board-container {
+  padding: 1rem 0;
+}
+
+/* Form spacing */
+.board-container form {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Global styling */
+.board-container input[type="text"] {
+  max-width: 300px;
+}
+
+/* Placeholder for where posts will go later */
+.board-grid {
+  margin-top: 2rem;
+}
+
+/* Card styling */
+.post-card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Title spacing inside cards (for later when JS adds posts) */
+.post-card h3 {
+  margin-top: 0;
+}
+
+/* Contact text (future use) */
+.post-card-contact {
+  font-size: 0.9rem;
+  color: #555;
+}
