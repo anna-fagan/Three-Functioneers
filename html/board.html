@@ -6,6 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="author" content="Anna Fagan, Catherine Hawley, Kelly Daniel">
         <title>Buyer's Market</title>
+        <style>
+            .home-decor{
+                display:none;
+            }
+
+            .office-supplies{
+                display:none;
+            }
+            
+        </style>
     </head>
     <body>
         <header>
@@ -15,5 +25,71 @@
             <button onclick="location.href='../html/board.html'">View Current Posts</button>
             <button onclick="location.href='../html/notifications_form.html'">Get Notified</button>
         </header>
+        <main>
+            <div>
+                <p>
+                    Please select the categories you want to view from the checklist below and then click submit categories
+                    to load the categories requested.
+                </p>
+            </div>
+            <div>
+                <label for="homeDecorCheck">Home Decor</label>
+                <input type="checkbox" id="homeDecorCheck" name="home-decor">
+                <label for="officeSuppliesCheck">Office Supplies</label>
+                <input type="checkbox" id="officeSuppliesCheck" name="office-supplies">
+                <br>
+                <button id="submitButton" onclick="showPost()">Submit Categories</button>
+            </div>
+            <!-- Start Home decor post section -->
+            <div class="home-decor">
+                <h2>1970's Style Plug-in Wall Lamp</h2>
+                <p><b>Seller's Name:</b> Joanne Bristol</p>
+                <p><b>City:</b> Bellevue</p>
+                <p><b>Seller's Email:</b> wall_lamp@bellevuecollege.edu</p>
+                <p><b>Category:</b>Home Decor</p>
+                <img src="../images/plug-in-wall-lamp.jpg" alt="A 1970's plug in wall lamp, brown handle, no lamp shade." style="width:40%;">
+                <p>
+                    Works great, no lamp shade. Old-style 2-prong plug. Main body is 30 inches long. With 
+                    attached rigid cord cover, entire assembly is about 60 inches.
+                </p>
+            </div>
+            <div class="home-decor">
+                <h2></h2>
+            </div>
+            <!-- End Home decor Section -->
+            <!-- Start Office supplies Section -->
+            <div class="office-supplies">
+                <h2></h2>
+            </div>
+            <div class="office-supplies">
+
+            </div>
+        </main>
+        <script>
+            // create a function for the submit button that will show the posts
+            function showPost(){
+                // Get checkboxes
+                const homeDecor = document.getElementById('homeDecorCheck');
+                const officeSupplies = document.getElementById('officeSuppliesCheck')
+
+                // Get const for the div boxes used
+                const homeDecorDiv = document.querySelectorAll('.home-decor');
+
+                // get the button that runs the code to display hidden boxes
+                const checkComittButton = document.getElementById('submitButton');
+
+                // set up an if loop for the first check box
+                if (homeDecor.checked === true){
+                    homeDecorDiv.forEach(element => {
+                        element.style.display = 'block';
+                    });
+                } else{
+                    homeDecorDiv.forEach(element => {
+                        element.style.display = 'none';
+                    });
+                }
+            }
+
+        </script>
     </body>
 </html>
