@@ -10,13 +10,27 @@
   box-sizing: border-box;
 }
 
+/* === KEEP FOOTER AT BOTTOM OF PAGE === */
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
   font-family: Verdana, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f8f8f8;
   color: #222;
   line-height: 1.5;
+}
+
+/* Main stretch = footer at bottom always */
+main {
+  flex: 1;
 }
 
 /* === HEADERS & FOOTERS === */
@@ -127,7 +141,76 @@ input[type="checkbox"] {
 }
 
 /* ============================
-   Board Page Styles 
+   Home Page Styles
+   ============================ */
+
+/* Section wrapper */
+.home-sections {
+  margin-top: 2rem;
+}
+
+/* Intro section */
+.intro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.intro h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #334155;
+}
+
+.intro p {
+  max-width: 650px;
+  margin: 0.5rem auto;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Card grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Individual cards */
+.card {
+  display: block;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  border-color: #cbd5e1;
+}
+
+/* Card titles */
+.card h3 {
+  margin-top: 0;
+  color: #1e3a8a;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Card text */
+.card p {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+/* ============================
+   Board/Listings Page Styles 
    ============================ */
 
 /* Space around main content */
@@ -150,18 +233,18 @@ input[type="checkbox"] {
 .board-grid {
   margin-top: 2rem;
 }
-.listing-image-container{
-  width:40%;
+.listing-image-container {
+  width: 40%;
 }
-.listing-block{
-  display:block;
+.listing-block {
+  display: block;
 }
 
-.listing-categories{
-  display:inline-block;
-  width:1fr;
-  padding:5px;
-  margin:15px;
+.listing-categories {
+  display: inline-block;
+  width: 1fr;
+  padding: 5px;
+  margin: 15px;
 }
 
 /* Card styling */
@@ -185,10 +268,70 @@ input[type="checkbox"] {
   color: #555;
 }
 
-.home-decor{
-  display:none;
+.home-decor {
+  display: none;
 }
 
-.office-supplies{
-  display:none;
+.office-supplies {
+  display: none;
+}
+
+/* ============================
+   Notify Form Page Styles
+   ============================ */
+
+/* Page container */
+.notify-container {
+  width: 90%;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Page heading */
+.notify-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Intro paragraph */
+.notify-container p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Spacing to match flow */
+.notify-container label {
+  margin-top: 0.5rem;
+}
+
+/* Category checkboxes layout */
+.notify-categories {
+  margin-bottom: 1.5rem;
+}
+
+.notify-categories label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Submit button */
+.notify-container button[type="submit"] {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Success message (hidden by default, shown with JS later) */
+.success-message {
+  display: none;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #d1fae5; /* pale green */
+  color: #065f46; /* dark green text */
+  font-weight: bold;
+  text-align: center;
 }
