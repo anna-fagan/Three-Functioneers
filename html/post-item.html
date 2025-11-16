@@ -14,11 +14,77 @@
     <title>Buyer's Market</title>
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../css/style.css" />
+    <style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
 
-    <!-- PAGE-SPECIFIC CSS Needs to be re-routed?-->
-    <link rel="stylesheet" href="../css/form.css" />
-    <!--Needs to be re-routed?-->
-  </head>
+/* Body styling */
+/* body {
+    background-color: hsl(240, 55%, 84%);
+    color: #333;
+    padding: 20px;
+} */
+
+/* Form container */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #99c1f8;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels and inputs */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color:  #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+/* Checkbox and radio layout */
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Section spacing */
+div {
+    margin-bottom: 20px;
+} 
+    </style>
+</head>
   <body>
     <header>
       <h1>Buyer's Market Posting Board</h1>
@@ -32,16 +98,6 @@
       <a href="about.html">About Us</a>
     </nav>
 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-    <link rel="stylesheet" href="./css/styles.css">
-
-</head>
-<body>
     <form action="results.html" method="GET">
         <label for="fname">First Name</label>
         <input type="text" name="fname" id="fname" placeholder="First Name" required>
@@ -56,15 +112,6 @@
     <label for="description">Item description</label>
     <textarea name="description" id="description" placeholder="Describe your item"></textarea>
 </div>
-
-        <!-- <label for="age">Age</label>
-        <input type="number" name="age" id="age" min="13" max="139" step="2" placeholder="Enter Age" required> -->
-
-
-<!-- <div>
-    <label for="phoneNumber">Phone</label>
-    <input type="tel" name="phoneNumber" id="phoneNumber">
-</div> -->
 
 <div>
     Category:
@@ -82,38 +129,7 @@
     </div>
 </div>
 
-<!-- <div>
-    <label>
-        User Name
-        <input type="text" name="username" id="username" placeholder="Username" required>
-    </label>
-</div> -->
-<!-- <div>
-    <p>Do you prefer Nighttime or Daytime?</p>
-    <label for="night">Night</label>
-    <input type="radio" name="timePreference" id="night" value="Night">
 
-    <label for="day">Day</label>
-    <input type="radio" name="timePreference" id="day" value="Day">
-</div> -->
-
-<!-- <div>
-    <label for="faveDay">Favorite Weekday</label>
-    <select name="faveDay" id="faveDay">
-        <option value="Monday">Monday</option>
-        <option value="Tuesday">Tuesday</option>
-        <option value="Wednesday">Wednesday</option>
-        <option value="Thursday">Thursday</option>
-        <option value="Friday">Friday</option>
-        <option value="Saturday">Saturday</option>
-        <option value="Sunday">Sunday</option>
-    </select>
-</div> -->
-
-<!-- <div>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required>
-</div> -->
 
 
 
