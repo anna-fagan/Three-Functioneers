@@ -140,6 +140,17 @@ input[type="checkbox"] {
   margin-bottom: 0.75rem;
 }
 
+/* <small> fine print styles */
+
+small {
+  display: block;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  color: #555;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
 /* ============================
    Home Page Styles
    ============================ */
@@ -334,4 +345,71 @@ input[type="checkbox"] {
   color: #065f46; /* dark green text */
   font-weight: bold;
   text-align: center;
+}
+
+/* ============================
+   Post Items Page Styles 
+   ============================ */
+
+/* ============================
+   About Us Page Styles 
+   ============================ */
+
+/* =========================
+          RESPONSIVE DESIGN
+    =========================== */
+
+/*    MOBILE (phones) */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.25rem;
+  }
+
+  header .tagline {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  /* Stack nav links */
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  nav a {
+    margin: 0.25rem 0;
+    display: block;
+  }
+
+  /* Intro section */
+  .intro h2 {
+    font-size: 1.5rem;
+  }
+
+  .intro p {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  nav a {
+    margin: 0 0.5rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .intro h2 {
+    font-size: 1.7rem;
+  }
+
+  .card-grid {
+    gap: 1rem;
+  }
 }

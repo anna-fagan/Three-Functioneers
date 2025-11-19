@@ -28,9 +28,23 @@
     <!-- === MAIN CONTENT === -->
     <main class="notify-container">
       <h2>Stay Updated</h2>
-      <p>Enter your email and choose at least one category to follow.</p>
+      <p>
+        Enter the required information and choose at least one category to
+        follow.
+      </p>
 
       <form>
+        <!-- “First Name” field  (required) -->
+
+        <label for="firstName">First Name (required)</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="Your first name"
+          required
+        />
+
         <label for="email">Email (required)</label>
         <input
           type="email"
@@ -39,6 +53,14 @@
           placeholder="you@example.com"
           required
         />
+
+        <!-- “City” dropdown (Bellevue only, required) -->
+
+        <label for="city">City (required)</label>
+        <select id="city" name="city" required>
+          <option value="" disabled selected>Select your city</option>
+          <option value="Bellevue">Bellevue</option>
+        </select>
 
         <label>Categories (choose one or more)</label>
 
@@ -55,9 +77,51 @@
             ><input type="checkbox" name="cat" value="Packing Materials" />
             Packing Materials</label
           >
+          <label
+            ><input type="checkbox" name="cat" value="Art Supplies" /> Art
+            Supplies</label
+          >
+          <label
+            ><input type="checkbox" name="cat" value="Home Furnishings" /> Home
+            Furnishings</label
+          >
         </div>
 
-        <button type="submit" class="btn">Sign Me Up</button>
+        <!-- PLACEHOLDER: Add rule (in JS later) requiring at least one category
+            LOGIC:  When the user clicks Submit:
+            Look at all checkboxes with name="cat"
+            If none of them are checked:
+            Show “Please choose at least one category to continue”
+            Stop the form from submitting
+                  Otherwise:
+              Allow the form to submit -->
+
+        <!-- Category checkbox requirement message (use JS later) -->
+        <div class="category-error-message">
+          Choose at least one category to continue.
+        </div>
+
+        <!-- “Notification Frequency” dropdown -->
+
+        <label for="frequency">Notification Frequency (required)</label>
+        <select id="frequency" name="frequency" required>
+          <option value="immediate">Immediately</option>
+          <option value="daily">Daily Summary</option>
+          <option value="weekly">Weekly Summary</option>
+        </select>
+
+        <!-- Consent checkbox (“I agree to receive notifications”) -->
+
+        <label class="consent-label">
+          <input type="checkbox" id="consent" name="consent" required />
+          I agree to receive email notifications about new items.
+          <small
+            >Your email will only be used for Buyer’s Market
+            notifications.</small
+          >
+        </label>
+
+        <button type="submit" class="btn">Create My Alerts</button>
 
         <div class="success-message" id="success">
           Thank you! Your preferences have been saved.
