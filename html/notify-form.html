@@ -27,7 +27,7 @@
 
     <!-- === MAIN CONTENT === -->
     <main class="notify-container">
-      <h2>Stay Updated</h2>
+      <h2>Get Notified About What Matters</h2>
       <p>
         Enter the required information and choose at least one category to
         follow.
@@ -62,39 +62,32 @@
           <option value="Bellevue">Bellevue</option>
         </select>
 
-        <label>Categories (choose one or more)</label>
+        <div class="category-card">
+          <label>Categories (choose one or more)</label>
 
-        <div class="notify-categories">
-          <label
-            ><input type="checkbox" name="cat" value="Home Decor" /> Home
-            Decor</label
-          >
-          <label
-            ><input type="checkbox" name="cat" value="Office Supplies" /> Office
-            Supplies</label
-          >
-          <label
-            ><input type="checkbox" name="cat" value="Packing Materials" />
-            Packing Materials</label
-          >
-          <label
-            ><input type="checkbox" name="cat" value="Art Supplies" /> Art
-            Supplies</label
-          >
-          <label
-            ><input type="checkbox" name="cat" value="Home Furnishings" /> Home
-            Furnishings</label
-          >
+          <div class="notify-categories">
+            <label
+              ><input type="checkbox" name="cat" value="Arts Crafts" /> Arts &
+              Crafts</label
+            >
+            <label
+              ><input type="checkbox" name="cat" value="Home Decor" /> Home
+              Decor</label
+            >
+            <label
+              ><input type="checkbox" name="cat" value="Home Furnishings" />
+              Home Furnishings</label
+            >
+            <label
+              ><input type="checkbox" name="cat" value="Office Supplies" />
+              Office Supplies</label
+            >
+            <label
+              ><input type="checkbox" name="cat" value="Packing Materials" />
+              Packing Materials</label
+            >
+          </div>
         </div>
-
-        <!-- PLACEHOLDER: Add rule (in JS later) requiring at least one category
-            LOGIC:  When the user clicks Submit:
-            Look at all checkboxes with name="cat"
-            If none of them are checked:
-            Show “Please choose at least one category to continue”
-            Stop the form from submitting
-                  Otherwise:
-              Allow the form to submit -->
 
         <!-- Category checkbox requirement message (use JS later) -->
         <div class="category-error-message">
@@ -105,6 +98,7 @@
 
         <label for="frequency">Notification Frequency (required)</label>
         <select id="frequency" name="frequency" required>
+          <option value="" disabled selected>Select frequency</option>
           <option value="immediate">Immediately</option>
           <option value="daily">Daily Summary</option>
           <option value="weekly">Weekly Summary</option>
@@ -122,15 +116,62 @@
         </label>
 
         <button type="submit" class="btn">Create My Alerts</button>
-
-        <div class="success-message" id="success">
-          Thank you! Your preferences have been saved.
-        </div>
       </form>
     </main>
 
     <footer>
       <p>© 2025 Buyer’s Market — Four Functioneers</p>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector("form");
+        const categoryError = document.querySelector(".category-error-message");
+
+        form.addEventListener("submit", (e) => {
+          // Look for all checked categories
+          const checkedCategories = document.querySelectorAll(
+            'input[name="cat"]:checked'
+          );
+
+          // If none are checked, show the error message and stop submission
+          if (checkedCategories.length === 0) {
+            e.preventDefault();
+            categoryError.style.display = "block";
+            return;
+          } else {
+            // Hide error if previously shown
+            categoryError.style.display = "none";
+          }
+          // If category requirement is satisfied
+          // local store and redirect
+
+          // --- Collect values from the form ---
+          const firstName = document.getElementById("firstName").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const city = document.getElementById("city").value;
+          const frequency = document.getElementById("frequency").value;
+          const consent = document.getElementById("consent").checked;
+
+          // Convert checked categories to a string
+          const categories = Array.from(
+            document.querySelectorAll('input[name="cat"]:checked')
+          )
+            .map((box) => box.value)
+            .join(", ");
+
+          // --- Save everything to localStorage ---
+          localStorage.setItem("notify_firstName", firstName);
+          localStorage.setItem("notify_email", email);
+          localStorage.setItem("notify_city", city);
+          localStorage.setItem("notify_categories", categories);
+          localStorage.setItem("notify_frequency", frequency);
+          localStorage.setItem("notify_consent", consent ? "yes" : "no");
+
+          // --- Redirect to confirmation page ---
+          e.preventDefault();
+          window.location.href = "./notify-confirmation.html";
+        });
+      });
+    </script>
   </body>
 </html>
