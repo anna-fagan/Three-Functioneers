@@ -98,110 +98,86 @@ div {
       <a href="about.html">About Us</a>
     </nav>
 
-    <form action="results.html" method="GET">
-        <label for="fname">First Name</label>
-        <input type="text" name="fname" id="fname" placeholder="First Name" required>
+   <form id="listingForm">
+  <label for="firstName">First Name</label>
+  <input type="text" name="firstName" id="firstName" required>
 
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="Email" required>
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email" required>
 
-        <label for="item">Item </label>
-        <input type="item" name="item" id="item" placeholder="Item name" required>
+  <label for="item">Item</label>
+  <input type="text" name="item" id="item" required>
 
-        <label for="item">Price </label>
-        <input type="price" name="price" id="item" placeholder="Enter 'free' or amount under $20" required>
+  <label for="price">Price</label>
+  <input type="text" name="price" id="price" required>
 
-        <div>
-    <label for="description">Item description</label>
-    <textarea name="description" id="description" placeholder="Describe your item"></textarea>
-</div>
+  <label for="description">Item Description</label>
+  <textarea name="description" id="description"></textarea>
 
-<div>
-    Category:
-    <div>
-        <label>
-            Home furnishings
-            <input type="checkbox" name="Home" id="Home">
-        </label>
-    </div>
-    <div>
-        <label>
-            Art supplies
-            <input type="checkbox" name="Art" id="Art">
-        </label>
-    </div>
-</div>
+  <p><strong>Category (choose at least one):</strong></p>
 
+  <label>
+    <input type="checkbox" name="cat" value="Home" />
+    Home furnishings
+  </label>
 
+  <label>
+    <input type="checkbox" name="cat" value="Art" />
+    Art supplies
+  </label>
 
+  <p class="category-error-message" style="color:red; display:none;">
+    Please check at least one category.
+  </p>
 
-
-<form>
-    <!-- <label for="webUrl">URL</label>
-    <input type="url" name="webUrl" id="webUrl">
-
-    <label for="favcolor">Favorite Color</label>
-    <input type="color" name="favcolor" id="favcolor">
-
-    <input type="hidden" name="sessionId" id="sessionId" value="SecretRandomNumberUsedtoManageTheSession"> -->
-
-    <button type="reset">Reset</button>
-     <button type="submit" class="btn">Create My Listing</button>
+  <button type="reset">Reset</button>
+  <button type="submit">Create My Listing</button>
 </form>
 
-<form action="results.html" method="GET" enctype="multipart/form-data">
-    <input type="file" name="fileUpload" id="fileUpload">
-</form>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("listingForm");
+  const categoryError = document.querySelector(".category-error-message");
 
+  form.addEventListener("submit", (e) => {
+    const checkedCategories = document.querySelectorAll(
+      'input[name="cat"]:checked'
+    );
 
-   
- <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const form = document.querySelector("form");
-        const categoryError = document.querySelector(".category-error-message");
+    // Stop submission if no categories chosen
+    if (checkedCategories.length === 0) {
+      e.preventDefault();
+      categoryError.style.display = "block";
+      return;
+    }
 
-        form.addEventListener("submit", (e) => {
-          // Look for all checked categories
-          const checkedCategories = document.querySelectorAll(
-            'input[name="cat"]:checked'
-          );
-           // If none are checked, show the error message and stop submission
-          if (checkedCategories.length === 0) {
-            e.preventDefault();
-            categoryError.style.display = "block";
-            return;
-          } else {
-            // Hide error if previously shown
-            categoryError.style.display = "none";
-          }
-          // If category requirement is satisfied
-          // local store and redirect
- // --- Collect values from the form ---
-          const firstName = document.getElementById("firstName").value.trim();
-          const item = document.getElementById("item").value.trim();
-          const price = document.getElementById("price").value;
-          const description = document.getElementById("description").value;
+    // Hide error if fixed
+    categoryError.style.display = "none";
 
-// Convert checked categories to a string
-          const categories = Array.from(
-            document.querySelectorAll('input[name="cat"]:checked')
-          )
-            .map((box) => box.value)
-            .join(", ");
+    // Gather fields
+    const firstName = document.getElementById("firstName").value.trim();
+    const item = document.getElementById("item").value.trim();
+    const price = document.getElementById("price").value.trim();
+    const description = document.getElementById("description").value.trim();
 
-  // --- Save everything to localStorage ---
-          localStorage.setItem("notify_firstName", firstName);
-          localStorage.setItem("notify_item", item);
-          localStorage.setItem("notify_price", price);
-          localStorage.setItem("notify_description", description)
-          localStorage.setItem("notify_categories", categories);   
-          
-            // --- Redirect to confirmation page ---
-          e.preventDefault();
-          window.location.href = "./post-confirmation.html";
-        });
-      });
- </script>   
+    const categories = Array.from(checkedCategories)
+      .map((box) => box.value)
+      .join(", ");
+
+    // Save to localStorage
+    localStorage.setItem("notify_firstName", firstName);
+    localStorage.setItem("notify_item", item);
+    localStorage.setItem("notify_price", price);
+    localStorage.setItem("notify_description", description);
+    localStorage.setItem("notify_categories", categories);
+
+    // Redirect
+    e.preventDefault();
+    window.location.href = "post-confirmation.html";
+  });
+});
+</script>
+
 </body>
 </html>
 
