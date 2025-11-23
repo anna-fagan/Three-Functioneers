@@ -498,3 +498,223 @@ small {
     gap: 1rem;
   }
 }
+
+.home-decor {
+  display: none;
+}
+
+.office-supplies {
+  display: none;
+}
+
+/* ============================
+   Notify Form Page Styles
+   ============================ */
+
+/* Page container */
+.notify-container {
+  width: 90%;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* form */
+
+.notify-container form {
+  margin-top: 1.5rem;
+}
+
+/* Page heading */
+.notify-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Intro paragraph */
+.notify-container p {
+  text-align: center;
+  margin-top: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.notify-container select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #ffffff;
+  font-size: 1rem;
+  color: 333;
+}
+
+.notify-container select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+/* Submit button, horiz center, no stretch */
+.notify-container button[type="submit"] {
+  display: block;
+  margin: 1.5rem auto 0 auto;
+  padding: 0.6rem 1.4rem;
+  width: auto;
+  box-shadow: 0 2px 8px #444;
+  font-weight: 600;
+}
+
+/* Category checkboxes layout */
+.notify-categories {
+  margin-bottom: 1.5rem;
+}
+
+.notify-categories label {
+  display: block;
+  margin-bottom: 0.6rem;
+  padding: 0.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.notify-categories input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #2563eb;
+  margin-right: 0.2rem;
+}
+
+.notify-categories label:hover {
+  background-color: #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+/* Category card & Confirm card wrapper */
+.category-card,
+.confirm-card {
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Adds space between card title and first ckbox */
+.category-card > label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.category-card .notify-categories label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.consent-label input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #2563eb;
+  margin-right: 0.2rem;
+}
+
+/* Category error message (hidden by default) */
+.category-error-message {
+  display: none;
+  color: #b91c1c;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Confirmation Page Button (ONLY applies here) */
+
+.confirm-btn {
+  text-decoration: none;
+  display: block;
+  margin: 1.5rem auto 0 auto;
+  padding: 0.6rem 1.4rem;
+  width: fit-content;
+  box-shadow: 0 2px 8px #444;
+  font-weight: 500;
+  text-align: center;
+  background-color: #2563eb;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.confirm-btn:hover {
+  background-color: #1e40af;
+}
+
+/* ============================
+   Post Items Page Styles 
+   ============================ */
+
+/* ============================
+   About Us Page Styles 
+   ============================ */
+
+/* =========================
+          RESPONSIVE DESIGN
+    =========================== */
+
+/*    MOBILE (phones) */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.25rem;
+  }
+
+  header .tagline {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  /* Stack nav links */
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  nav a {
+    margin: 0.25rem 0;
+    display: block;
+  }
+
+  /* Intro section */
+  .intro h2 {
+    font-size: 1.5rem;
+  }
+
+  .intro p {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  nav a {
+    margin: 0 0.5rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .intro h2 {
+    font-size: 1.7rem;
+  }
+
+  .card-grid {
+    gap: 1rem;
+  }
+}

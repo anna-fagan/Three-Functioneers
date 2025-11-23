@@ -22,16 +22,11 @@
     font-family: Verdana, sans-serif;
 }
 
-/* Body styling */
-/* body {
-    background-color: hsl(240, 55%, 84%);
-    color: #333;
-    padding: 20px;
-} */
 
 /* Form container */
 form {
-    max-width: 600px;
+    width: 700px;
+    /* max-width: 100% !important; */
     margin: 0 auto;
     background-color: #99c1f8;
     padding: 20px 30px;
@@ -98,63 +93,87 @@ div {
       <a href="about.html">About Us</a>
     </nav>
 
-    <form action="results.html" method="GET">
-        <label for="fname">First Name</label>
-        <input type="text" name="fname" id="fname" placeholder="First Name" required>
+<!--Similar to notify-form-->
+   <form id="listingForm">
+  <label for="firstName">First Name</label>
+  <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
 
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="Email" required>
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email" placeholder="Email"required>
 
-        <label for="item">Item </label>
-        <input type="item" name="item" id="item" placeholder="Item name" required>
+  <label for="item">Item</label>
+  <input type="text" name="item" id="item" placeholder="Item label"required>
 
-        <label for="item">Price </label>
-        <input type="price" name="price" id="item" placeholder="Enter 'free' or amount under $20" required>
+  <label for="price">Price</label>
+  <input type="text" name="price" id="price" placeholder="Enter 'free' or an amount less than $20"required>
 
-        <div>
-    <label for="description">Item description</label>
-    <textarea name="description" id="description" placeholder="Describe your item"></textarea>
-</div>
+  <label for="description">Item Description</label>
+  <textarea name="description" id="description"></textarea>
 
-<div>
-    Category:
-    <div>
-        <label>
-            Home furnishings
-            <input type="checkbox" name="Home" id="Home">
-        </label>
-    </div>
-    <div>
-        <label>
-            Art supplies
-            <input type="checkbox" name="Art" id="Art">
-        </label>
-    </div>
-</div>
+  <p><strong>Category (choose at least one):</strong></p>
 
+  <label>
+    <input type="checkbox" name="cat" value="Home" />
+    Home furnishings
+  </label>
 
+  <label>
+    <input type="checkbox" name="cat" value="Art" />
+    Art supplies
+  </label>
 
+  <p class="category-error-message" style="color:red; display:none;">
+    Please check at least one category.
+  </p>
 
-
-<form>
-    <!-- <label for="webUrl">URL</label>
-    <input type="url" name="webUrl" id="webUrl">
-
-    <label for="favcolor">Favorite Color</label>
-    <input type="color" name="favcolor" id="favcolor">
-
-    <input type="hidden" name="sessionId" id="sessionId" value="SecretRandomNumberUsedtoManageTheSession"> -->
-
-    <button type="reset">Reset</button>
-    <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+  <button type="submit">Create My Listing</button>
 </form>
 
-<form action="results.html" method="GET" enctype="multipart/form-data">
-    <input type="file" name="fileUpload" id="fileUpload">
-</form>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("listingForm");
+  const categoryError = document.querySelector(".category-error-message");
 
+  form.addEventListener("submit", (e) => {
+    const checkedCategories = document.querySelectorAll(
+      'input[name="cat"]:checked'
+    );
 
-    </form>
+    // Stop submission if no categories chosen
+    if (checkedCategories.length === 0) {
+      e.preventDefault();
+      categoryError.style.display = "block";
+      return;
+    }
+
+    // Hide error if fixed
+    categoryError.style.display = "none";
+
+    // Gather fields
+    const firstName = document.getElementById("firstName").value.trim();
+    const item = document.getElementById("item").value.trim();
+    const price = document.getElementById("price").value.trim();
+    const description = document.getElementById("description").value.trim();
+
+    const categories = Array.from(checkedCategories)
+      .map((box) => box.value)
+      .join(", ");
+
+    // Save to localStorage
+    localStorage.setItem("notify_firstName", firstName);
+    localStorage.setItem("notify_item", item);
+    localStorage.setItem("notify_price", price);
+    localStorage.setItem("notify_description", description);
+    localStorage.setItem("notify_categories", categories);
+
+    // Redirect
+    e.preventDefault();
+    window.location.href = "post-confirmation.html";
+  });
+});
+</script>
+
 </body>
 </html>
 
