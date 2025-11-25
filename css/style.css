@@ -4,6 +4,36 @@
    Purpose: Shared styles for the Four Functioneers project
    ========================================= */
 
+/*. Color Palette
+    • Deep Blue: #1E3A8A (anchor color)
+    • Warm Beige: #F7F2EA
+    • Clay Brown: #B08968
+    • Soft Olive: #6B705C
+*/
+
+/* Full-page background for Home ONLY */
+.home-bg {
+  position: relative;
+}
+
+/* The image layer */
+.home-bg::before {
+  content: "";
+  position: fixed; /* fixed scroll */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url("/images/background-global.jpg");
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.45;
+  filter: blur(6px);
+  z-index: -1;
+}
+
 /* === GLOBAL Styles-base reference === */
 
 * {
@@ -38,7 +68,7 @@ main {
 header,
 footer {
   background-color: #334155;
-  color: #ffffff;
+  color: #d9d0c1;
   text-align: center;
   padding: 1rem;
 }
@@ -54,25 +84,28 @@ nav {
   background-color: #475569;
   padding: 0.75rem;
   text-align: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 nav a {
-  color: white;
+  color: #d9d0c1;
   text-decoration: none;
   margin: 0 1rem;
   font-weight: bold;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
+  padding: 0.55rem 1.2rem;
+  border-radius: 15px;
   display: inline-block;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 nav a:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* === BUTTONS === */
-/* Use .btn so button styling doesn’t override <input type=submit> if used later */
 
 button,
 .btn {
@@ -99,7 +132,6 @@ button:hover,
   padding: 1rem;
 }
 
-/* Utility class for future JS-driven visibility? Will we use? */
 .hidden {
   display: none !important;
 }
@@ -132,15 +164,12 @@ input[type="checkbox"] {
   margin-right: 0.4rem;
 }
 
-/* Error styles */
 .error-message {
   color: #b91c1c;
   font-weight: bold;
   margin-top: -0.5rem;
   margin-bottom: 0.75rem;
 }
-
-/* <small> fine print styles */
 
 small {
   display: block;
@@ -152,15 +181,75 @@ small {
 }
 
 /* ============================
+   Hero Section — Buyer’s Market
+   ============================ */
+
+.hero {
+  width: 100%;
+  height: 500px;
+  background-image: url("/images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  /*filter: blur(0.2px);*/
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 140px;
+}
+
+.hero-overlay h1 {
+  font-size: 1.8rem;
+  color: #99d98c;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.hero-overlay p {
+  font-size: 1rem;
+  color: #99d98c;
+  max-width: 650px;
+  line-height: 1.4;
+}
+
+/* ============================
    Home Page Styles
    ============================ */
 
-/* Section wrapper */
 .home-sections {
   margin-top: 2rem;
 }
 
-/* Intro section */
 .intro {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -187,7 +276,6 @@ small {
   margin-top: 1rem;
 }
 
-/* Individual cards */
 .card {
   display: block;
   background-color: #ffffff;
@@ -206,7 +294,6 @@ small {
   border-color: #cbd5e1;
 }
 
-/* Card titles */
 .card h3 {
   margin-top: 0;
   color: #1e3a8a;
@@ -214,7 +301,6 @@ small {
   margin-bottom: 0.5rem;
 }
 
-/* Card text */
 .card p {
   font-size: 0.95rem;
   color: #475569;
@@ -224,29 +310,27 @@ small {
    Board/Listings Page Styles 
    ============================ */
 
-/* Space around main content */
 .board-container {
   padding: 1rem 0;
 }
 
-/* Form spacing */
 .board-container form {
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
-/* Global styling */
 .board-container input[type="text"] {
   max-width: 90%;
 }
 
-/* Placeholder for where posts will go later */
 .board-grid {
   margin-top: 2rem;
 }
+
 .listing-image-container {
   width: 40%;
 }
+
 .listing-block {
   display: block;
 }
@@ -258,7 +342,6 @@ small {
   margin: 15px;
 }
 
-/* Card styling */
 .post-card {
   background-color: white;
   border: 1px solid #ccc;
@@ -268,12 +351,10 @@ small {
   margin-top: 1rem;
 }
 
-/* Title spacing inside cards (for later when JS adds posts) */
 .post-card h2 {
   margin-top: 0;
 }
 
-/* Contact text (future use) */
 .post-card-contact {
   font-size: 0.9rem;
   color: #555;
@@ -291,7 +372,6 @@ small {
    Notify Form Page Styles
    ============================ */
 
-/* Page container */
 .notify-container {
   width: 90%;
   max-width: 700px;
@@ -303,20 +383,17 @@ small {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
 }
 
-/* form */
-
 .notify-container form {
   margin-top: 1.5rem;
 }
 
-/* Page heading */
 .notify-container h2 {
   text-align: center;
   margin-bottom: 1rem;
 }
 
-/* Intro paragraph */
 .notify-container p {
+  color: #1e3a8a;
   text-align: center;
   margin-top: 0.75rem;
   margin-bottom: 1.75rem;
@@ -339,22 +416,12 @@ small {
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
 }
 
-/* Submit button, horiz center, no stretch */
-.notify-container button[type="submit"] {
-  display: block;
-  margin: 1.5rem auto 0 auto;
-  padding: 0.6rem 1.4rem;
-  width: auto;
-  box-shadow: 0 2px 8px #444;
-  font-weight: 600;
-}
-
-/* Category checkboxes layout */
 .notify-categories {
   margin-bottom: 1.5rem;
 }
 
 .notify-categories label {
+  color: #1e3a8a;
   display: block;
   margin-bottom: 0.6rem;
   padding: 0.2rem;
@@ -374,7 +441,6 @@ small {
   transition: background-color 0.2s ease;
 }
 
-/* Category card & Confirm card wrapper */
 .category-card,
 .confirm-card {
   background: #fafafa;
@@ -385,7 +451,6 @@ small {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Adds space between card title and first ckbox */
 .category-card > label {
   display: block;
   font-weight: bold;
@@ -404,15 +469,12 @@ small {
   margin-right: 0.2rem;
 }
 
-/* Category error message (hidden by default) */
 .category-error-message {
   display: none;
   color: #b91c1c;
   font-weight: 600;
   margin-bottom: 1rem;
 }
-
-/* Confirmation Page Button (ONLY applies here) */
 
 .confirm-btn {
   text-decoration: none;
@@ -442,9 +504,9 @@ small {
 
 /* =========================
           RESPONSIVE DESIGN
-    =========================== */
+   =========================== */
 
-/*    MOBILE (phones) */
+/* MOBILE */
 @media (max-width: 600px) {
   header h1 {
     font-size: 1.6rem;
@@ -456,7 +518,6 @@ small {
     padding: 0 1rem;
   }
 
-  /* Stack nav links */
   nav {
     display: flex;
     flex-direction: column;
@@ -468,7 +529,6 @@ small {
     display: block;
   }
 
-  /* Intro section */
   .intro h2 {
     font-size: 1.5rem;
   }
