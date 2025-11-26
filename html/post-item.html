@@ -15,72 +15,71 @@
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../css/style.css" />
     <style>
-    * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Verdana, sans-serif;
-}
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, sans-serif;
+      }
 
+      /* Form container */
+      form {
+        width: 700px;
+        /* max-width: 100% !important; */
+        margin: 0 auto;
+        background-color: #99c1f8;
+        padding: 20px 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        font-family: Verdana, sans-serif;
+      }
 
-/* Form container */
-form {
-    width: 700px;
-    /* max-width: 100% !important; */
-    margin: 0 auto;
-    background-color: #99c1f8;
-    padding: 20px 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    font-family: Verdana, sans-serif;
-}
+      /* Labels and inputs */
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
 
-/* Labels and inputs */
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
 
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+      /* Buttons */
+      button {
+        padding: 10px 20px;
+        margin-right: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #2563eb;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-/* Buttons */
-button {
-    padding: 10px 20px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color:  #2563eb;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+      button:hover {
+        background-color: #005fa3;
+      }
 
-button:hover {
-    background-color: #005fa3;
-}
+      /* Checkbox and radio layout */
+      input[type="checkbox"],
+      input[type="radio"] {
+        width: auto;
+        margin-right: 10px;
+      }
 
-/* Checkbox and radio layout */
-input[type="checkbox"],
-input[type="radio"] {
-    width: auto;
-    margin-right: 10px;
-}
-
-/* Section spacing */
-div {
-    margin-bottom: 20px;
-} 
+      /* Section spacing */
+      div {
+        margin-bottom: 20px;
+      }
     </style>
-</head>
+  </head>
   <body>
     <header>
       <h1>Buyer's Market Posting Board</h1>
@@ -93,87 +92,117 @@ div {
       <a href="about.html">About Us</a>
     </nav>
 
-<!--Similar to notify-form-->
-   <form id="listingForm">
-  <label for="firstName">First Name</label>
-  <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+    <main>
+      <!--Similar to notify-form-->
+      <form id="listingForm">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          name="firstName"
+          id="firstName"
+          placeholder="First Name"
+          required
+        />
 
-  <label for="email">Email</label>
-  <input type="email" name="email" id="email" placeholder="Email" required>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+          required
+        />
 
-  <label for="item">Item</label>
-  <input type="text" name="item" id="item" placeholder="Item label" required>
+        <label for="item">Item</label>
+        <input
+          type="text"
+          name="item"
+          id="item"
+          placeholder="Item label"
+          required
+        />
 
-  <label for="price">Price</label>
-  <input type="text" name="price" id="price" placeholder="Enter 'free' or an amount less than $20" required>
+        <label for="price">Price</label>
+        <input
+          type="text"
+          name="price"
+          id="price"
+          placeholder="Enter 'free' or an amount less than $20"
+          required
+        />
 
-  <label for="description">Item Description</label>
-  <textarea name="description" id="description"></textarea>
+        <label for="description">Item Description</label>
+        <textarea name="description" id="description"></textarea>
 
-  <p><strong>Category (choose at least one):</strong></p>
+        <p><strong>Category (choose at least one):</strong></p>
 
-  <label>
-    <input type="checkbox" name="cat" value="Home" />
-    Home furnishings
-  </label>
+        <label>
+          <input type="checkbox" name="cat" value="Home" />
+          Home furnishings
+        </label>
 
-  <label>
-    <input type="checkbox" name="cat" value="Art" />
-    Art supplies
-  </label>
+        <label>
+          <input type="checkbox" name="cat" value="Art" />
+          Art supplies
+        </label>
 
-  <p class="category-error-message" style="color:red; display:none;">
-    Please check at least one category.
-  </p>
+        <p class="category-error-message" style="color: red; display: none">
+          Please check at least one category.
+        </p>
 
-  <button type="reset">Reset</button>
-  <button type="submit">Create My Listing</button>
-</form>
+        <button type="reset">Reset</button>
+        <button type="submit">Create My Listing</button>
+      </form>
+    </main>
+    <footer>
+      <p>© 2025 Buyer’s Market — Four Functioneers</p>
+      <p>Team: Catherine Hawley, Anna Fagan, Kelly Daniel, Lizbeth Garcia</p>
+    </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("listingForm");
-  const categoryError = document.querySelector(".category-error-message");
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("listingForm");
+        const categoryError = document.querySelector(".category-error-message");
 
-  form.addEventListener("submit", (e) => {
-    const checkedCategories = document.querySelectorAll(
-      'input[name="cat"]:checked'
-    );
+        form.addEventListener("submit", (e) => {
+          const checkedCategories = document.querySelectorAll(
+            'input[name="cat"]:checked'
+          );
 
-    // Stop submission if no categories chosen
-    if (checkedCategories.length === 0) {
-      e.preventDefault();
-      categoryError.style.display = "block";
-      return;
-    }
+          // Stop submission if no categories chosen
+          if (checkedCategories.length === 0) {
+            e.preventDefault();
+            categoryError.style.display = "block";
+            return;
+          }
 
-    // Hide error if fixed
-    categoryError.style.display = "none";
+          // Hide error if fixed
+          categoryError.style.display = "none";
 
-    // Gather fields
-    const firstName = document.getElementById("firstName").value.trim();
-    const item = document.getElementById("item").value.trim();
-    const price = document.getElementById("price").value.trim();
-    const description = document.getElementById("description").value.trim();
+          // Gather fields
+          const firstName = document.getElementById("firstName").value.trim();
+          const item = document.getElementById("item").value.trim();
+          const price = document.getElementById("price").value.trim();
+          const description = document
+            .getElementById("description")
+            .value.trim();
 
-    const categories = Array.from(checkedCategories)
-      .map((box) => box.value)
-      .join(", ");
+          const categories = Array.from(checkedCategories)
+            .map((box) => box.value)
+            .join(", ");
 
-    // Save to localStorage
-    localStorage.setItem("notify_firstName", firstName);
-    localStorage.setItem("notify_item", item);
-    localStorage.setItem("notify_price", price);
-    localStorage.setItem("notify_description", description);
-    localStorage.setItem("notify_categories", categories);
+          // Save to localStorage
+          localStorage.setItem("notify_firstName", firstName);
+          localStorage.setItem("notify_item", item);
+          localStorage.setItem("notify_price", price);
+          localStorage.setItem("notify_description", description);
+          localStorage.setItem("notify_categories", categories);
 
-    // Redirect
-    e.preventDefault();
-    window.location.href = "post-confirmation.html";
-  });
-});
-</script>
-
-</body>
+          // Redirect
+          e.preventDefault();
+          window.location.href = "post-confirmation.html";
+        });
+      });
+    </script>
+  </body>
 </html>
-

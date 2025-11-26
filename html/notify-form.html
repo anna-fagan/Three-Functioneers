@@ -96,12 +96,29 @@
 
         <!-- “Notification Frequency” dropdown -->
 
-        <label for="frequency">Notification Frequency (required)</label>
         <select id="frequency" name="frequency" required>
           <option value="" disabled selected>Select frequency</option>
-          <option value="immediate">Immediately</option>
-          <option value="daily">Daily Summary</option>
-          <option value="weekly">Weekly Summary</option>
+
+          <option
+            value="immediately"
+            title="Get an email each time a new item is posted in your selected categories."
+          >
+            Immediately
+          </option>
+
+          <option
+            value="daily"
+            title="Receive one message each evening with all new items from today."
+          >
+            Daily Summary
+          </option>
+
+          <option
+            value="weekly"
+            title="Receive a weekly roundup of all new items posted in your chosen categories."
+          >
+            Weekly Summary
+          </option>
         </select>
 
         <!-- Consent checkbox (“I agree to receive notifications”) -->
@@ -121,6 +138,7 @@
 
     <footer>
       <p>© 2025 Buyer’s Market — Four Functioneers</p>
+      <p>Team: Catherine Hawley, Anna Fagan, Kelly Daniel, Lizbeth Garcia</p>
     </footer>
     <script>
       document.addEventListener("DOMContentLoaded", () => {

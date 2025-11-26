@@ -502,71 +502,6 @@ small {
    About Us Page Styles 
    ============================ */
 
-/* =========================
-          RESPONSIVE DESIGN
-   =========================== */
-
-/* MOBILE */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.6rem;
-    margin-bottom: 0.25rem;
-  }
-
-  header .tagline {
-    font-size: 0.95rem;
-    padding: 0 1rem;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  nav a {
-    margin: 0.25rem 0;
-    display: block;
-  }
-
-  .intro h2 {
-    font-size: 1.5rem;
-  }
-
-  .intro p {
-    font-size: 0.95rem;
-    padding: 0 0.5rem;
-  }
-}
-
-/* TABLET */
-@media (max-width: 900px) {
-  nav a {
-    margin: 0 0.5rem;
-    padding: 0.35rem 0.75rem;
-  }
-
-  .container {
-    width: 95%;
-  }
-
-  .intro h2 {
-    font-size: 1.7rem;
-  }
-
-  .card-grid {
-    gap: 1rem;
-  }
-}
-
-.home-decor {
-  display: none;
-}
-
-.office-supplies {
-  display: none;
-}
-
 /* ============================
    Notify Form Page Styles
    ============================ */
@@ -720,12 +655,13 @@ small {
    About Us Page Styles 
    ============================ */
 
-/* =========================
-          RESPONSIVE DESIGN
-    =========================== */
+/* /* =========================
+   RESPONSIVE DESIGN
+========================= */
 
-/*    MOBILE (phones) */
+/* ===== MOBILE ===== */
 @media (max-width: 600px) {
+  /* Header */
   header h1 {
     font-size: 1.6rem;
     margin-bottom: 0.25rem;
@@ -736,7 +672,7 @@ small {
     padding: 0 1rem;
   }
 
-  /* Stack nav links */
+  /* Nav stacked */
   nav {
     display: flex;
     flex-direction: column;
@@ -748,7 +684,7 @@ small {
     display: block;
   }
 
-  /* Intro section */
+  /* Intro text */
   .intro h2 {
     font-size: 1.5rem;
   }
@@ -757,9 +693,26 @@ small {
     font-size: 0.95rem;
     padding: 0 0.5rem;
   }
+
+  /* Hero responsiveness */
+  .hero {
+    height: 300px; /* Smaller hero for small screens */
+  }
+
+  .hero-overlay {
+    padding-top: 60px; /* Reduce vertical spacing */
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.3rem;
+  }
+
+  .hero-overlay p {
+    font-size: 0.9rem;
+  }
 }
 
-/* TABLET */
+/* ===== TABLET  ===== */
 @media (max-width: 900px) {
   nav a {
     margin: 0 0.5rem;
@@ -776,5 +729,18 @@ small {
 
   .card-grid {
     gap: 1rem;
+  }
+
+  /* Tablet hero responsiveness */
+  .hero {
+    height: 400px;
+  }
+
+  .hero-overlay {
+    padding-top: 100px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.6rem;
   }
 }
