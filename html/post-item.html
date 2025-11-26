@@ -132,23 +132,39 @@
         />
 
         <label for="description">Item Description</label>
-        <textarea name="description" id="description"></textarea>
+        <textarea name="description" id="description" placeholder="Describe your item."></textarea>
+     
+        <div class="category-card">
+          <label>Categories (choose one or more)</label>
 
-        <p><strong>Category (choose at least one):</strong></p>
+          <div class="notify-categories">
+            <label
+              ><input type="checkbox" name="cat" value="Arts Crafts" /> Arts &
+              Crafts</label
+            >
+            <label
+              ><input type="checkbox" name="cat" value="Home Decor" /> Home
+              Decor</label
+            >
+            <label
+              ><input type="checkbox" name="cat" value="Home Furnishings" />
+              Home Furnishings</label
+            >
+            <label
+              ><input type="checkbox" name="cat" value="Office Supplies" />
+              Office Supplies</label
+            >
+            <label
+              ><input type="checkbox" name="cat" value="Packing Materials" />
+              Packing Materials</label
+            >
+          </div>
+        </div>
 
-        <label>
-          <input type="checkbox" name="cat" value="Home" />
-          Home furnishings
-        </label>
-
-        <label>
-          <input type="checkbox" name="cat" value="Art" />
-          Art supplies
-        </label>
-
-        <p class="category-error-message" style="color: red; display: none">
-          Please check at least one category.
-        </p>
+    
+        <div class="category-error-message">
+          Choose at least one category to continue.
+        </div>
 
         <button type="reset">Reset</button>
         <button type="submit">Create My Listing</button>
