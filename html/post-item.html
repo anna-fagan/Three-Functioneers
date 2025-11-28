@@ -26,7 +26,7 @@
       form {
         width: 700px;
         /* max-width: 100% !important; */
-        margin: 0 auto;
+        margin: 01rem auto;
         background-color: #99c1f8;
         padding: 20px 30px;
         border-radius: 8px;
@@ -57,8 +57,19 @@
         margin-right: 10px;
         border: none;
         border-radius: 4px;
-        background-color: #2563eb;
-        color: white;
+        background-color: #d9d0c1;
+        color: black;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .create-listing-button{
+        padding: 10px 20px;
+        margin-right: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #99d98c;
+        color: black;
         cursor: pointer;
         transition: background-color 0.3s ease;
       }
@@ -80,17 +91,20 @@
       }
     </style>
   </head>
-  <body class="post-page">
+  <body class ="home-bg">
     <header>
-      <h1>Buyer's Market Create Post</h1>
+      <h1>Buyer’s Market</h1>
+      <p class="tagline">
+        A simple way to give and receive goods in your community.
+      </p>
     </header>
     <!-- ==== GLOBAL NAVIGATION ==== -->
     <nav>
       <a href="../index.html">Home</a>
-      <a href="./post-item.html">Post</a>
-      <a href="./listings.html">Browse</a>
-      <a href="./notify-form.html">Alerts</a>
-      <a href="./about.html">About</a>
+      <a href="../html/post-item.html">Create a Post</a>
+      <a href="../html/listings.html">Listings</a>
+      <a href="../html/notify-form.html">Get Notifications</a>
+      <a href="../html/about.html">About Us</a>
     </nav>
 
     <main>
@@ -171,7 +185,7 @@
         </div>
 
         <button type="reset">Reset</button>
-        <button type="submit">Create My Listing</button>
+        <button type="submit" class="create-listing-button">Create My Listing</button>
       </form>
     </main>
     <footer>

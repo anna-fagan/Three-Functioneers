@@ -15,38 +15,42 @@
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body class="listings-page">
+  <body class="home-bg">
     <header>
       <h1>Buyer's Market Posting Board</h1>
     </header>
     <!-- ==== GLOBAL NAVIGATION ==== -->
     <nav>
       <a href="../index.html">Home</a>
-      <a href="./post-item.html">Post</a>
-      <a href="./listings.html">Browse</a>
-      <a href="./notify-form.html">Alerts</a>
-      <a href="./about.html">About</a>
+      <a href="../html/post-item.html">Create a Post</a>
+      <a href="../html/listings.html">Listings</a>
+      <a href="../html/notify-form.html">Get Notifications</a>
+      <a href="../html/about.html">About Us</a>
     </nav>
 
     <main class="container board-container">
-      <div>
+      <div class="check-card">
         <p>
           Please select the categories you want to view from the checklist below
           and then click submit categories to load the categories requested.
         </p>
-      </div>
-      <div class="listing-block">
-        <div class="listing-categories">
-          <label for="homeDecorCheck">Home Decor</label>
-          <input type="checkbox" id="homeDecorCheck" name="home-decor" />
-        </div>
-        <div class="listing-categories">
-          <label for="officeSuppliesCheck">Office Supplies</label>
-          <input
-            type="checkbox"
-            id="officeSuppliesCheck"
-            name="office-supplies"
-          />
+        <div class="listing-block">
+          <div class="listing-categories">
+            <label for="homeDecorCheck">Home Decor</label>
+            <input type="checkbox" id="homeDecorCheck" name="home-decor"/>
+          </div>
+          <div class="listing-categories">
+            <label for="officeSuppliesCheck">Office Supplies</label>
+            <input type="checkbox" id="officeSuppliesCheck" name="office-supplies"/>
+          </div>
+          <div class="listing-categories">
+            <label for="packingMaterialsCheck">Packing Materials</label>
+            <input type="checkbox" id="packingMaterialsCheck" name="packing-materials"/>
+          </div>
+          <div class="listing-categories">
+            <label for="artSuppliesCheck">Art Supplies</label>
+            <input type="checkbox" id="artSuppliesCheck" name="packing-supplies"/>
+          </div>
         </div>
       </div>
       <button id="submitButton" onclick="showPost()">Submit Categories</button>
