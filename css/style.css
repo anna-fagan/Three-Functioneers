@@ -77,11 +77,11 @@ footer p {
 /* === Header Logo + Title Alignment  === */
 .header-inner {
   display: flex;
-  align-items: center; /* keep centered layout like before */
+  align-items: center; * keep centered layout like bef/ore */
   gap: 1px; /* spacing between logo + text */
 }
 
-/* Logo sizing */
+/* Standard logo */
 .site-logo {
   height: 80px;
   width: auto;
@@ -89,18 +89,21 @@ footer p {
   margin-top: 25px;
 }
 
-/* Title remains unchanged but we can refine if needed */
+/* Big page title text. */
 .site-title {
   font-size: 2.2rem; /* matches your original home header size */
   font-weight: 500;
   color: #fafaf8;
 }
+
+/* Tagline after title, smaller lighter, elegant styling.*/
 .sub-secondary {
   font-size: 0.8em;
   font-weight: 300;
   opacity: 95;
 }
 
+/* Vertical green bar.*/
 .divider {
   color: #99d98c;
   opacity: 0.7;
@@ -131,7 +134,7 @@ h3 {
    4. GLOBAL FORM TYPOGRAPHY SYSTEM
    ========================================= */
 
-/* Labels (aligned with global h3 tone) */
+/* Labels (aligned with global h3 tone) helps grouping of form inputs */
 label {
   font-size: 0.95rem;
   font-weight: 500;
@@ -140,7 +143,8 @@ label {
   display: block;
 }
 
-/* Inputs, selects, textareas */
+/* Inputs, selects, textareas - Soft borders, subtle shadow on focus.
+Matches ADA guidelines */
 input,
 select,
 textarea {
@@ -180,7 +184,7 @@ input[type="checkbox"] {
   opacity: 1;
 }
 
-/* Small helper text */
+/* Small helper text. appears under inputs */
 small {
   display: block;
   margin-top: 0.25rem;
@@ -189,6 +193,7 @@ small {
   line-height: 1.4;
 }
 
+/* Small helper text. appears under inputs. this one is notify page specific */
 .frequency-help {
   display: block;
   margin-top: -0.5rem;
@@ -296,17 +301,20 @@ button + button,
 /* =========================================
    7.a. LAYOUT HELPERS
    ========================================= */
+
+   /* Centers page content and adds horizontal padding.
+   Keeps page from stretching edge to edge.*/
 .container {
   width: 90%;
   max-width: 1100px;
   margin: 0 auto;
   padding: 1rem;
 }
-
+ /* Instantly hides an element, js uses this.*/
 .hidden {
   display: none !important;
 }
-
+/* Simple text-centering helper.*/
 .center {
   text-align: center;
 }
@@ -501,10 +509,13 @@ input[type="checkbox"]{
   margin-left:1rem;
 }
 
+
+
 /* ============================
-   Notify Form Page Styles
+   11. NOTIFY PAGE (Form + Confirmation)
    ============================ */
 
+/* Main centered card for the Alert form & Confirmation page */
 .notify-container {
   width: 90%;
   max-width: 700px;
@@ -516,17 +527,38 @@ input[type="checkbox"]{
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
 }
 
+/* Page heading */
 .notify-container h2 {
   text-align: center;
   margin-bottom: 1rem;
 }
 
+/* Intro paragraph */
 .notify-container p {
   text-align: center;
   margin: 0.75rem 0 1.75rem;
   color: #1e3a8a;
 }
 
+/* Category checkbox layout */
+.notify-categories {
+  margin-bottom: 1.5rem;
+}
+
+.notify-categories label {
+  display: block;
+  padding: 0.2rem;
+  margin-bottom: 0.6rem;
+  color: #1e3a8a;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.notify-categories label:hover {
+  background-color: #fffdf8;
+}
+
+/* White blocks around groups on form & confirmation */
 .category-card,
 .confirm-card {
   background: #fafafa;
@@ -548,6 +580,7 @@ input[type="checkbox"]{
   margin-bottom: 0.5rem;
 }
 
+/* Agree to terms checkbox */
 .consent-label input[type="checkbox"] {
   width: 1.1rem;
   height: 1.1rem;
@@ -555,6 +588,7 @@ input[type="checkbox"]{
   margin-right: 0.2rem;
 }
 
+/* Error message for missing categories */
 .category-error-message {
   display: none;
   color: #b91c1c;
@@ -562,8 +596,9 @@ input[type="checkbox"]{
   margin-bottom: 1rem;
 }
 
-.confirm-btn {
-  text-decoration: none;
+/* Submit + return buttons */
+.confirm-btn,
+.notify-container button[type="submit"] {
   display: block;
   margin: 1.5rem auto 0 auto;
   padding: 0.6rem 1.4rem;
@@ -576,10 +611,13 @@ input[type="checkbox"]{
   border-radius: 6px;
 }
 
-.confirm-btn:hover {
+.confirm-btn:hover,
+.notify-container button[type="submit"]:hover {
   background-color: #1e40af;
 }
-.check-card{
+
+/* For visual grouping on confirmation page */
+.check-card {
   display: block;
   background-color: #ffffff;
   padding: 1.5rem;
@@ -589,110 +627,6 @@ input[type="checkbox"]{
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   border: 1px solid #e2e8f0;
   margin-bottom: 1rem;
-}
-
-
-/* ============================
-   Post Items Page Styles 
-   ============================ */
-
-/* ============================
-   About Us Page Styles 
-   ============================ */
-
-/* ============================
-   Notify Form Page Styles
-   ============================ */
-
-/* Page container */
-.notify-container {
-  width: 90%;
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-}
-
-/* form */
-
-.notify-container form {
-  margin-top: 1.5rem;
-}
-
-/* Page heading */
-.notify-container h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-/* Intro paragraph */
-.notify-container p {
-  text-align: center;
-  margin-top: 0.75rem;
-  margin-bottom: 1.75rem;
-}
-
-.notify-container select {
-  width: 100%;
-  padding: 0.6rem;
-  margin-bottom: 1.2rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  background-color: #ffffff;
-  font-size: 1rem;
-  color: 333;
-}
-
-.notify-container select:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
-}
-
-/* Submit button, horiz center, no stretch */
-.notify-container button[type="submit"] {
-  display: block;
-  margin: 1.5rem auto 0 auto;
-  padding: 0.6rem 1.4rem;
-  width: auto;
-  box-shadow: 0 2px 8px #444;
-  font-weight: 600;
-}
-
-/* Category checkboxes layout */
-.notify-categories {
-  margin-bottom: 1.5rem;
-}
-
-.notify-categories label {
-  display: block;
-  padding: 0.2rem;
-  margin-bottom: 0.6rem;
-  color: #1e3a8a;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.notify-categories label:hover {
-  background-color: #fffdf8;
-}
-
-.category-card,
-.confirm-card {
-  background: #fafafa;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 1.25rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.category-card > label {
-  font-weight: bold;
-  margin-bottom: 0.75rem;
 }
 
 /* =========================================
@@ -721,19 +655,6 @@ input[type="checkbox"]{
   padding-left: 1.3rem;
   line-height: 1.6;
   color: #334155;
-}
-
-/* Extra spacing below confirmation card */
-.confirm-card {
-  margin-bottom: 2rem;
-}
-
-/* Center the confirmation button */
-.confirm-btn {
-  display: block;
-  text-align: center;
-  width: fit-content;
-  margin: 1.5rem auto 0 auto;
 }
 
 /* =========================================
