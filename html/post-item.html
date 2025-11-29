@@ -12,6 +12,13 @@
       content="Anna Fagan, Catherine Hawley, Kelly Daniel, Lizbeth Garcia"
     />
     <title>Buyer's Market</title>
+    <!-- GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../css/style.css" />
     <style>
@@ -31,7 +38,7 @@
         padding: 20px 30px;
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        font-family: Verdana, sans-serif;
+        /*font-family: Verdana, sans-serif;*/
       }
 
       /* Labels and inputs */
@@ -68,21 +75,38 @@
       } */
 
       /* Checkbox and radio layout */
-      input[type="checkbox"],
+      /* input[type="checkbox"],
       input[type="radio"] {
         width: auto;
         margin-right: 10px;
-      }
+      } */
 
       /* Section spacing */
-      div {
+      /* div {
         margin-bottom: 20px;
-      }
+      } */
     </style>
   </head>
+
+  <!-- === ACTIVE NAV STATE (auto-highlight current page) === -->
   <body class="post-page">
+    <!-- GLOBAL HEADER -->
     <header>
-      <h1>Buyer's Market Create Post</h1>
+      <div class="header-inner">
+        <a href="../index.html">
+          <img
+            src="../images/Logo-Img-Green.png"
+            alt="Buyer's Market Logo"
+            class="site-logo"
+          />
+        </a>
+
+        <h1 class="site-title">
+          Post
+          <span class="divider">|</span>
+          <span class="sub-secondary">Pass good things forward</span>
+        </h1>
+      </div>
     </header>
     <!-- ==== GLOBAL NAVIGATION ==== -->
     <nav>
@@ -174,6 +198,8 @@
         <button type="submit">Create My Listing</button>
       </form>
     </main>
+
+    <!-- ==== GLOBAL FOOTER ==== -->
     <footer>
       <p>© 2025 Buyer’s Market — Four Functioneers</p>
       <p>Team: Catherine Hawley, Anna Fagan, Kelly Daniel, Lizbeth Garcia</p>

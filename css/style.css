@@ -6,7 +6,7 @@
    ========================================= */
 
 /* =========================================
-   1. GLOBAL RESET + BASE ELEMENTS
+   1. GLOBAL + BASE ELEMENTS
    ========================================= */
 * {
   box-sizing: border-box;
@@ -71,6 +71,43 @@ footer p {
   margin: 0.25rem 0;
 }
 
+/* ============================================
+   2.b. GLOBAL HEADER ELEMENTS 
+   ============================================ */
+/* === Header Logo + Title Alignment  === */
+.header-inner {
+  display: flex;
+  align-items: center; /* keep centered layout like before */
+  gap: 1px; /* spacing between logo + text */
+}
+
+/* Logo sizing */
+.site-logo {
+  height: 80px;
+  width: auto;
+  display: block;
+  margin-top: 25px;
+}
+
+/* Title remains unchanged but we can refine if needed */
+.site-title {
+  font-size: 2.2rem; /* matches your original home header size */
+  font-weight: 500;
+  color: #fafaf8;
+}
+.sub-secondary {
+  font-size: 0.8em;
+  font-weight: 300;
+  opacity: 95;
+}
+
+.divider {
+  color: #99d98c;
+  opacity: 0.7;
+  font-weight: 300;
+  margin: 0 0.5rem;
+  line-height: 1.4;
+}
 /* =========================================
    3. GLOBAL TYPOGRAPHY
    ========================================= */
@@ -152,15 +189,24 @@ small {
   line-height: 1.4;
 }
 
-/* Error message */
-.error-message {
+.frequency-help {
+  display: block;
+  margin-top: -0.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Error message used in the JS */
+.category-error-message {
+  display: none; /* stays hidden until JS shows it */
   color: #b91c1c;
   font-weight: 600;
   margin: -0.5rem 0 0.75rem;
 }
 
 /* =========================================
-   5. NAVIGATION
+   5. GLOBAL NAVIGATION
    ========================================= */
 nav {
   background-color: #475569; /* slate grey-blue */
@@ -217,7 +263,7 @@ button,
 .confirm-btn {
   display: inline-block;
   text-decoration: none;
-  background-color: #7fbf73; /* sage green */
+  background-color: #95ce8d; /* softer sage green */
   color: #ffffff;
   font-weight: 500;
   border: none;
@@ -248,7 +294,7 @@ button + button,
 }
 
 /* =========================================
-   7. LAYOUT HELPERS
+   7.a. LAYOUT HELPERS
    ========================================= */
 .container {
   width: 90%;
@@ -495,6 +541,47 @@ button + button,
 .category-card > label {
   font-weight: bold;
   margin-bottom: 0.75rem;
+}
+
+/* =========================================
+   11.b NOTIFY CONFIRMATION STYLES
+   ========================================= */
+
+/* Confirmation greeting */
+.confirm-greeting {
+  text-align: center;
+  color: #1e3a8a;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* “Here are your alert details” line */
+.confirm-card > p:nth-of-type(2) {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: #334155;
+}
+
+/* Details list */
+.confirm-details-list {
+  list-style-type: disc;
+  padding-left: 1.3rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* Extra spacing below confirmation card */
+.confirm-card {
+  margin-bottom: 2rem;
+}
+
+/* Center the confirmation button */
+.confirm-btn {
+  display: block;
+  text-align: center;
+  width: fit-content;
+  margin: 1.5rem auto 0 auto;
 }
 
 /* =========================================

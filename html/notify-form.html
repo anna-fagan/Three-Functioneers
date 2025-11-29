@@ -4,19 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Four Functioneers" />
-    <title>Buyer’s Market | Get Notifications</title>
+    <title>Buyer’s Market</title>
 
+    <!-- GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../css/style.css" />
   </head>
-
+  <!-- === ACTIVE NAV STATE (auto-highlight current page) === -->
   <body class="notify-page">
+    <!-- GLOBAL HEADER -->
     <header>
-      <h1>Alerts | Buyer's Market</h1>
-      <!-- Rmoved tagline class and p -->
+      <div class="header-inner">
+        <a href="../index.html">
+          <img
+            src="../images/Logo-Img-Green.png"
+            alt="Buyer's Market Logo"
+            class="site-logo"
+          />
+        </a>
+
+        <h1 class="site-title">
+          Alerts
+          <span class="divider">|</span>
+          <span class="sub-secondary">Never miss what matters</span>
+        </h1>
+      </div>
     </header>
 
-    <!-- === NAVIGATION === -->
+    <!-- === GLOBAL NAVIGATION === -->
     <nav>
       <a href="../index.html">Home</a>
       <a href="./post-item.html">Post</a>
@@ -27,7 +48,7 @@
 
     <!-- === MAIN CONTENT === -->
     <main class="notify-container">
-      <h2>Get Notified About What Matters</h2>
+      <h2>You're One Step Closer</h2>
       <p>
         Enter the required information and choose at least one category to
         follow.
@@ -97,6 +118,9 @@
         <!-- “Notification Frequency” dropdown -->
 
         <select id="frequency" name="frequency" required>
+          <small class="frequency-help">
+            How often would you like to receive updates?
+          </small>
           <option value="" disabled selected>Select frequency</option>
 
           <option
@@ -135,7 +159,7 @@
         <button type="submit" class="btn">Create My Alerts</button>
       </form>
     </main>
-
+    <!-- ==== GLOBAL FOOTER ==== -->
     <footer>
       <p>© 2025 Buyer’s Market — Four Functioneers</p>
       <p>Team: Catherine Hawley, Anna Fagan, Kelly Daniel, Lizbeth Garcia</p>
