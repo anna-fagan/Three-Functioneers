@@ -451,11 +451,12 @@ button + button,
 }
 
 .listing-block {
-  display: block;
+  display: flex;
+  flex-direction: row;
 }
 
 .listing-categories {
-  display: inline-block;
+  display: flex;
   width: 1fr;
   padding: 5px;
   margin: 15px;
@@ -486,9 +487,24 @@ button + button,
 .office-supplies {
   display: none;
 }
-/* =========================================
-   11. NOTIFY PAGE (Form + Confirmation)
-   ========================================= */
+
+.packing-supplies{
+  display: none;
+}
+
+.art-supplies{
+  display: none;
+}
+
+input[type="checkbox"]{
+  transform:scale(1.5);
+  margin-left:1rem;
+}
+
+/* ============================
+   Notify Form Page Styles
+   ============================ */
+
 .notify-container {
   width: 90%;
   max-width: 700px;
@@ -511,6 +527,142 @@ button + button,
   color: #1e3a8a;
 }
 
+.category-card,
+.confirm-card {
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.category-card > label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.category-card .notify-categories label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.consent-label input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #2563eb;
+  margin-right: 0.2rem;
+}
+
+.category-error-message {
+  display: none;
+  color: #b91c1c;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.confirm-btn {
+  text-decoration: none;
+  display: block;
+  margin: 1.5rem auto 0 auto;
+  padding: 0.6rem 1.4rem;
+  width: fit-content;
+  box-shadow: 0 2px 8px #444;
+  font-weight: 500;
+  text-align: center;
+  background-color: #2563eb;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.confirm-btn:hover {
+  background-color: #1e40af;
+}
+.check-card{
+  display: block;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1rem;
+}
+
+
+/* ============================
+   Post Items Page Styles 
+   ============================ */
+
+/* ============================
+   About Us Page Styles 
+   ============================ */
+
+/* ============================
+   Notify Form Page Styles
+   ============================ */
+
+/* Page container */
+.notify-container {
+  width: 90%;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* form */
+
+.notify-container form {
+  margin-top: 1.5rem;
+}
+
+/* Page heading */
+.notify-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Intro paragraph */
+.notify-container p {
+  text-align: center;
+  margin-top: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.notify-container select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #ffffff;
+  font-size: 1rem;
+  color: 333;
+}
+
+.notify-container select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+/* Submit button, horiz center, no stretch */
+.notify-container button[type="submit"] {
+  display: block;
+  margin: 1.5rem auto 0 auto;
+  padding: 0.6rem 1.4rem;
+  width: auto;
+  box-shadow: 0 2px 8px #444;
+  font-weight: 600;
+}
+
+/* Category checkboxes layout */
 .notify-categories {
   margin-bottom: 1.5rem;
 }
