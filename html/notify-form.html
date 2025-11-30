@@ -57,12 +57,12 @@
       <form>
         <!-- “First Name” field  (required) -->
 
-        <label for="firstName">First Name (required)</label>
+        <label for="yourName">Your Name (required)</label>
         <input
           type="text"
-          id="firstName"
-          name="firstName"
-          placeholder="Your first name"
+          id="yourName"
+          name="yourName"
+          placeholder="Your name"
           required
         />
 
@@ -188,7 +188,7 @@
           // local store and redirect
 
           // --- Collect values from the form ---
-          const firstName = document.getElementById("firstName").value.trim();
+          const yourName = document.getElementById("yourName").value.trim();
           const email = document.getElementById("email").value.trim();
           const city = document.getElementById("city").value;
           const frequency = document.getElementById("frequency").value;
@@ -202,7 +202,7 @@
             .join(", ");
 
           // --- Save everything to localStorage ---
-          localStorage.setItem("notify_firstName", firstName);
+          localStorage.setItem("notify_yourName", yourName);
           localStorage.setItem("notify_email", email);
           localStorage.setItem("notify_city", city);
           localStorage.setItem("notify_categories", categories);
