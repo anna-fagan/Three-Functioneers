@@ -26,6 +26,21 @@ body {
   background-color: #f0efea; /* warm neutral */
   color: #222;
   line-height: 1.5;
+  background-image: url("../images/bing-img-background-subtle.jpeg");
+  background-size: 600px;
+  background-repeat: repeat;
+  background-position: top left;
+  background-attachment: fixed;
+}
+
+/* Fade the wallpaper background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(240, 239, 234, 0.6); /* 0.60 = subtle, 0.75 = very faint) */
+  z-index: -1;
 }
 
 main {
