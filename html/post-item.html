@@ -21,82 +21,6 @@
     />
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../css/style.css" />
-    <style>
-      /** {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: Verdana, sans-serif;
-      }*/ /* Commented out because overiding the global */
-
-      /* Form container */
-      form {
-        width: 100%;
-        max-width: 700px;
-        margin: 01rem auto;
-        background-color: #99c1f8;
-        padding: 16px 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        /*font-family: Verdana, sans-serif;*/
-      }
-
-      /* Labels and inputs */
-      label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: bold;
-      }
-
-      input,
-      select,
-      textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-      }
-
-      /* ==== Not needed, inherits global styles from css, safe to delete ====
-      button {
-        padding: 10px 20px;
-        margin-right: 10px;
-        border: none;
-        border-radius: 4px;
-        background-color: #d9d0c1;
-        color: black;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      .create-listing-button{
-        padding: 10px 20px;
-        margin-right: 10px;
-        border: none;
-        border-radius: 4px;
-        background-color: #99d98c;
-        color: black;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      button:hover {
-        background-color: #005fa3;
-      } */
-
-      /* Checkbox and radio layout */
-      /* input[type="checkbox"],
-      input[type="radio"] {
-        width: auto;
-        margin-right: 10px;
-      } */
-
-      /* Section spacing */
-      /* div {
-        margin-bottom: 20px;
-      } */
-    </style>
   </head>
 
   <!-- === ACTIVE NAV STATE (auto-highlight current page) === -->
@@ -127,23 +51,24 @@
       <a href="./notify-form.html">Alerts</a>
       <a href="./about.html">About</a>
     </nav>
+    <main class="notify-container post-container">
+      <h2>Start Your Post</h2>
+      <p>We just need a few details</p>
 
-    <main>
-      <!--Similar to notify-form-->
       <form id="listingForm">
         <label for="itemPhoto">Upload a Photo of Your Item</label>
         <input type="file" name="itemPhoto" id="itemPhoto" required />
 
-        <label for="sellerName">Seller Name</label>
+        <label for="sellerName">Your Name (required)</label>
         <input
           type="text"
           name="sellerName"
           id="sellerName"
-          placeholder="Seller Name"
+          placeholder="Your Name"
           required
         />
 
-        <label for="email">Email</label>
+        <label for="email">Email (required)</label>
         <input
           type="email"
           name="email"
@@ -208,13 +133,14 @@
           Choose at least one category to continue.
         </div>
 
-        <button type="reset">Reset</button>
-        <button type="submit" class="create-listing-button">
-          Create My Listing
-        </button>
+        <div class="post-buttons">
+          <button type="submit" class="create-listing-button">
+            Create My Post
+          </button>
+          <button type="reset">Reset</button>
+        </div>
       </form>
     </main>
-
     <!-- ==== GLOBAL FOOTER ==== -->
     <footer>
       <p>© 2025 Buyer’s Market — Four Functioneers</p>
