@@ -21,6 +21,50 @@
     />
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /** {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, sans-serif;
+      }*/ /* Commented out because overiding the global */
+
+      /* Form container */
+      form {
+        width: 100%;
+        max-width: 700px;
+        margin: 01rem auto;
+        background-color: #99c1f8;
+        padding: 16px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        /*font-family: Verdana, sans-serif;*/
+      }
+
+      /* Labels and inputs */
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      h2{
+        text-align: center;
+      }
+      p{
+        text-align: center;
+      }
+    </style>
   </head>
 
   <!-- === ACTIVE NAV STATE (auto-highlight current page) === -->
@@ -56,6 +100,10 @@
       <p>We just need a few details</p>
 
       <form id="listingForm">
+        <h2>Give us the Details</h2>
+        <p>
+          Fill out the following form to post your item to our website.
+        </p>
         <label for="itemPhoto">Upload a Photo of Your Item</label>
         <input type="file" name="itemPhoto" id="itemPhoto" required />
 
